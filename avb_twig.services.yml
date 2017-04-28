@@ -1,0 +1,7 @@
+services:
+  avb_twig.twig.TwigExtension:
+    class: Drupal\avb_twig\TwigExtension
+    arguments:
+      - '@current_route_match'
+    tags:
+      - {name: twig.extension}

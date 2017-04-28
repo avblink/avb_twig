@@ -1,0 +1,13 @@
+{
+    "name": "avblink/avb_twig",
+    "description": "Drupal 8 Twig Extension. Provides custom twig functions and filters.",
+    "type": "drupal-module",
+    "authors": [
+        {
+            "name": "Alexander Benjamin"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

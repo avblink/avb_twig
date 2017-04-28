@@ -1,0 +1,4 @@
+name: 'AVB Twig Extension'
+description: 'Provides custom twig functions'
+type: module
+core: 8.x
