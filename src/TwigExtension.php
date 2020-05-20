@@ -3,6 +3,7 @@
 namespace Drupal\avb_twig;
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Template\Attribute;
 
 /**
  * Twig extension with some useful functions and filters.
@@ -32,6 +33,7 @@ class TwigExtension extends \Twig_Extension {
     public function getFunctions() {
         return [
           new \Twig_SimpleFunction('avb_twig_current_entity', [$this, 'currentEntity']),
+          new \Twig_SimpleFunction('avb_twig_create_attribute', [$this, 'createAttribute']),
         ];
     }
 
@@ -57,6 +59,20 @@ class TwigExtension extends \Twig_Extension {
             return $entity;
         }
         return NULL;
+    }
+
+    /**
+     * Creates an Attribute object.
+     *
+     * @param array $attributes
+     *   (optional) An associative array of key-value pairs to be converted to
+     *   HTML attributes.
+     *
+     * @return \Drupal\Core\Template\Attribute
+     *   An attributes object that has the given attributes.
+     */
+    public function createAttribute(array $attributes = []) {
+        return new Attribute($attributes);
     }
 
 }
